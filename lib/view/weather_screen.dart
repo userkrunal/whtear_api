@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 else if(snapshot.hasData)
                   {
                     WeatherModel weatherModel=snapshot.data!;
-
+                    wpF!.imagechange(weatherModel.main!.temp!);
                     return Container(
                       height: 100.h,
                         width: 100.w,
@@ -56,11 +56,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           SizedBox(height: 20.h,),
+                      Text("It's ${weatherModel.weather![0].description}",style: TextStyle(fontSize: 30.sp,fontWeight: FontWeight.w300,color: Colors.black54)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Image.asset("assets/images/img1.png"),
-                              Text("${weatherModel.main!.temp}°C",style: TextStyle(fontSize: 25.sp),)
+                              Image.asset("${wpT!.selectimage}",height: 25.h,width: 25.w,fit: BoxFit.fill,),
+                              Text("${weatherModel.main!.temp!.toInt()*10}°C",style: TextStyle(fontSize: 25.sp),),
+                              Text("${weatherModel.weather![0].main}°C",style: TextStyle(fontSize: 15.sp),)
                             ],
                           ),
                           Spacer(),
