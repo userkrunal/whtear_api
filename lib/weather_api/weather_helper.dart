@@ -11,7 +11,6 @@ class WeatherApi
     String link="https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$long&appid=27b4b62af22f34b9d2cb91d921d3c4cb&units=metric";
     var response=await http.get(Uri.parse(link));
     var json=jsonDecode(response.body);
-    print(json);
     return  WeatherModel.fromJson(json);
   }
 }

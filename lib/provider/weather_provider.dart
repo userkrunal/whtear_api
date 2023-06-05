@@ -27,7 +27,7 @@ class WeatherProvider extends ChangeNotifier
     {
       selectimage = "assets/images/daily/sun.png";
     }
-    else if(temp<=25)
+    else if(temp>=25)
     {
       selectimage ="assets/images/img4.png";
     }
