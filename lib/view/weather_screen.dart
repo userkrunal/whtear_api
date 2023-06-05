@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Image.asset("${wpT!.selectimage}",height: 25.h,width: 25.w,fit: BoxFit.fill,),
+                              Image.asset("${wpT!.selectimage}",height: 25.h,width: 50.w,fit: BoxFit.fill,),
                               Text("${weatherModel.main!.temp!.toInt()*10}°C",style: TextStyle(fontSize: 25.sp),),
                               Text("${weatherModel.weather![0].main}°C",style: TextStyle(fontSize: 15.sp),)
                             ],
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             children: [
                               Image.asset("assets/images/img5.png",height: 20.h,width: 20.w,fit: BoxFit.fill,),
-                              Text("${weatherModel.wind!.speed}")
+                              Text("${weatherModel.wind!.speed}sp",style: TextStyle(fontSize: 30),)
                             ],
                           )
                         ],
